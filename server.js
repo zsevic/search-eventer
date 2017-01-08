@@ -3,6 +3,7 @@ var app=express();
 var mongoose=require("mongoose");
 var passport=require("passport");
 var flash=require("connect-flash");
+var request=require("request");
 
 var morgan=require("morgan");
 var bodyParser=require("body-parser");
@@ -18,6 +19,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended:true }));
 
 app.set("port",process.env.PORT || 8080);
+app.use(express.static(__dirname+"/public"));
 app.set('view engine', 'ejs');
 
 require("./config/passport")(passport);

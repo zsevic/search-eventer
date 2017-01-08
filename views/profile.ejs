@@ -13,19 +13,19 @@
 
     <div class="page-header text-center">
         <h1><span class="fa fa-anchor"></span> Profile Page</h1>
-        <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+		<a href="/search" class="btn btn-info btn-md">Search</a>
+        <a href="/logout" class="btn btn-danger btn-md">Logout</a>
     </div>
 
     <div class="row">
 
         <!-- FACEBOOK INFORMATION -->
-        <div class="col-sm-6">
+        <div class="col-sm-6 col-sm-offset-3">
             <div class="well">
                 <h3 class="text-primary"><span class="fa fa-facebook"></span> Facebook</h3>
 
                     <p>
                         <strong>id</strong>: <%= user.facebook.id %><br>
-                        <strong>token</strong>: <%= user.facebook.token %><br>
                         <strong>email</strong>: <%= user.facebook.email %><br>
                         <strong>name</strong>: <%= user.facebook.name %>
                     </p>

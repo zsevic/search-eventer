@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+    <title>Search Eventer</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> <!-- load bootstrap css -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- load fontawesome -->
+	<link rel="stylesheet" href="style.css">
+    <style>
+        body        { padding-top:80px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+	<div class="col-sm-6 col-sm-offset-3">
+    	<h1><span class="fa fa-search"></span> Search</h1>
+   		<!-- SEARCH FORM -->
+    	<form action="/search" method="get">
+        	<div class="form-group">
+        	    <label>Event ID</label>
+        	    <input type="text" class="form-control" name="eventID" placeholder="https://facebook.com/events/<ID>">
+        	</div>
+        	<div class="form-group">
+            	<label>Name</label>
+            	<input type="text" class="form-control" name="eventer">
+        	</div>
+        	<button type="submit" class="btn btn-info btn-md">Search!</button>
+			<a href="/profile" class="btn btn-default btn-md">Profile</a>
+    		<a href="/logout" class="btn btn-danger btn-md">Logout</a>
+    	</form>
+    	<hr>
+	</div>
+</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6 col-sm-offset-3">
+				<ul class="result">
+				<% if(result!==undefined && result.length>0)
+				for(var i=0;i<result.length;i++){ %>
+					<li><a href="https://facebook.com/<%= result[i].id %>"><%= result[i].name %></a></li>
+				<% } %>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

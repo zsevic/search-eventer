@@ -1,0 +1,17 @@
+.result{
+	font-size:16px;
+}
+
+li{
+	width:50%;
+	margin:auto;
+}
+
+a{
+	font-size:14px;
+	outline:0;
+}
+
+a:hover{
+	text-decoration:none;
+}
