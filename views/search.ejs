@@ -34,12 +34,16 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-6 col-sm-offset-3">
-				<ul class="result">
 				<% if(result!==undefined && result.length>0)
 				for(var i=0;i<result.length;i++){ %>
-					<li><a href="https://facebook.com/<%= result[i].id %>"><%= result[i].name %></a></li>
+					<div class="paragraphs result">
+						<div class="row">
+							<div class="span4">
+							<img class="result_img" src="<%= result[i].picture.data.url %>"/>
+							<div class="content-heading"><a href="https://facebook.com/<%= result[i].id %>" class="result_url"><%= result[i].name %></a></div>
+						</div>
+					</div>
 				<% } %>
-				</ul>
 			</div>
 		</div>
 	</div>

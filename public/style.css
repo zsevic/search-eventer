@@ -1,17 +1,22 @@
-.result{
-	font-size:16px;
-}
-
 li{
 	width:50%;
 	margin:auto;
 }
 
-a{
-	font-size:14px;
+.result_url{
+	font-size:16px;
 	outline:0;
 }
 
-a:hover{
+a:hover, a:visited, a:link, a:active{
 	text-decoration:none;
+}
+
+.result{
+	margin-top:6px;
+	margin-bottom:6px;
+}
+
+.result_img{
+	float:left;
 }
