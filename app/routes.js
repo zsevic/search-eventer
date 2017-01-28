@@ -1,5 +1,4 @@
 module.exports=function(app,passport){
-
 app.get('/',function(req, res, next) {
 	res.render('index.ejs');
 });
@@ -8,8 +7,9 @@ app.get("/profile",isLoggedIn,function(req,res){
 	res.render("profile.ejs",{user:req.user});
 });
 
-app.get("/search",isLoggedIn,function(req,res){
-	var query = require('url').parse(req.url,true).query;
+app.get("/search",isLoggedIn,function(req,res){	
+	var url=require("url");
+	var query = url.parse(req.url,true).query;
 	var eventID=query.eventID;
 	var eventer=query.eventer
 	var token=req.user.facebook.token;

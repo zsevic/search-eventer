@@ -1,3 +1,4 @@
+var path=require("path");
 var express = require('express');
 var app=express();
 var mongoose=require("mongoose");
@@ -19,7 +20,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended:true }));
 
 app.set("port",process.env.PORT || 8080);
-app.use(express.static(__dirname+"/public"));
+app.use(express.static(path.join(__dirname,"public")));
 app.set('view engine', 'ejs');
 
 require("./config/passport")(passport);
