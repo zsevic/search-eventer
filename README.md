@@ -1,4 +1,4 @@
-Search Eventer
+Search Eventer [![Code Climate](https://codeclimate.com/repos/588c1e0928a275017200496c/badges/bd41092547d23b9fbb97/gpa.svg)](https://codeclimate.com/repos/588c1e0928a275017200496c/feed)
 ===
 
 An app that helps you to find a person that you met at some event
