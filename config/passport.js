@@ -34,8 +34,6 @@ passport.use(new FacebookStrategy({
                 }
             });
         });
-
-
 }));
 
 passport.serializeUser(function(user, done) {
