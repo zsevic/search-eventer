@@ -13,6 +13,7 @@ const cookieSession = require('cookie-session');
 require('dotenv').config();
 
 var configDB = require('./config/database');
+mongoose.Promise = global.Promise;
 mongoose.connect(configDB.url, {
     useMongoClient: true
 });
