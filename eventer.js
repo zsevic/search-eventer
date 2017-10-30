@@ -1,6 +1,6 @@
 module.exports=function(eventID,name,token,done){
 	var request=require("request");
-	var access="https://graph.facebook.com/v2.8/"+eventID+"/attending?fields=name,picture{url}&limit=500&access_token="+token;
+	var access="https://graph.facebook.com/v2.10/"+eventID+"/attending?fields=name,picture{url}&limit=500&access_token="+token;
 	var regex=new RegExp(" ?"+name+" ");
 	var arr=[];
 	var giveMeData=function(access){

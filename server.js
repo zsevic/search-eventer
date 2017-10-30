@@ -11,8 +11,12 @@ var bodyParser=require("body-parser");
 var cookieParser=require("cookie-parser");
 var cookieSession=require("cookie-session");
 
+require('dotenv').config();
+
 var configDB=require("./config/database");
-mongoose.connect(configDB.url);
+mongoose.connect(configDB.url,{
+    useMongoClient:true
+});
 
 app.use(morgan('dev'));
 app.use(cookieParser());
