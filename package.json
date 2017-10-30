@@ -5,10 +5,12 @@
   "scripts": {
     "start": "node server.js"
   },
+  "engines":{
+    "npm":"5.3.0",
+    "node":"7.9.0"
+  },
   "dependencies": {
-    "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.15.2",
-    "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.3",
     "cookie-session": "^2.0.0-alpha.3",
     "dotenv": "^4.0.0",

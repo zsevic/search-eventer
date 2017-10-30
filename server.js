@@ -1,21 +1,20 @@
-var path=require("path");
-var express = require('express');
-var app=express();
-var mongoose=require("mongoose");
-var passport=require("passport");
-var flash=require("connect-flash");
-var request=require("request");
+const path = require('path');
+const express = require('express');
+const app = express();
+const mongoose = require('mongoose');
+const passport = require('passport');
+const request = require('request');
 
-var morgan=require("morgan");
-var bodyParser=require("body-parser");
-var cookieParser=require("cookie-parser");
-var cookieSession=require("cookie-session");
+const morgan = require('morgan');
+const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
+const cookieSession = require('cookie-session');
 
 require('dotenv').config();
 
-var configDB=require("./config/database");
-mongoose.connect(configDB.url,{
-    useMongoClient:true
+var configDB = require('./config/database');
+mongoose.connect(configDB.url, {
+    useMongoClient: true
 });
 
 app.use(morgan('dev'));
@@ -23,11 +22,11 @@ app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended:true }));
 
-app.set("port",process.env.PORT || 8080);
-app.use(express.static(path.join(__dirname,"public")));
+app.set('port',process.env.PORT || 8080);
+app.use(express.static(path.join(__dirname,'public')));
 app.set('view engine', 'ejs');
 
-require("./config/passport")(passport);
+require('./config/passport')(passport);
 
 app.use(cookieSession({
 	name:'session',
@@ -36,10 +35,9 @@ app.use(cookieSession({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(flash());
 
-require("./app/routes")(app,passport);
+require('./app/routes')(app,passport);
 
-app.listen(app.get('port'), function() {
-  console.log('The magic happens on port ' + app.get('port'));
+app.listen(app.get('port'), () => {
+  console.log(`Server is running on port ${app.get('port')}`);
 });
