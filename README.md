@@ -1,3 +1,7 @@
+# :wastebasket: DEPRECATED DUE TO CHANGES IN GRAPH API
+
+---
+
 # search-eventer
 
 > An app that helps you to find a person that you met at some event
